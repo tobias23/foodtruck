@@ -1,0 +1,27 @@
+ [
+    {
+      "latitude": 56.150620,
+      "longitude": 10.203686,
+      "name": "Pølsetoget",
+      "stuff": "Pølsetoget har haft hovedkontor ved banegården siden 200 BC og har med sine sublime pølser altid haft et varmt sted i de danske hjerter."
+    },
+    {
+      "latitude": 56.153237,
+      "longitude": 10.206701,
+      "name": "Dragons Kager",
+      "stuff": "Dragons Kager ligger lige ved den famøse butik Dragons Lair, som har sslgt nørd memorabilia i mange mange år."
+    },
+    {
+      "latitude": 56.156177,
+      "longitude": 10.200318,
+      "name": "Møllebakken Chilihaus",
+      "stuff": "Mmmmmhh.. Kan du mærke det brænder i næsen. Ja det er ikke Chili Klaus, men rettere Chilihaus som ligger lige ved Møllebakken."
+    },
+    {
+      "latitude": 56.172023,
+      "longitude": 10.205044,
+      "name": "Pizza On Wheelz",
+      "stuff": "Vrum Vrum! Pas på dernede, der kommer pizza. Pizza On Wheelz er kendte for deres specielle fremgangsmåde med at vognen altid bevæger sig. Vil man spise ved vognen skal man derfor have løbeskoene på"
+    }
+  ]
+

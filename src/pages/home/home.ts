@@ -4,6 +4,7 @@ import {Geolocation} from "@ionic-native/geolocation";
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
 import {ProfilePage} from "../profile/profile";
+import {NativeGeocoder, NativeGeocoderForwardResult} from "@ionic-native/native-geocoder";
 
 declare var google;
 
@@ -19,8 +20,7 @@ export class HomePage {
   map: any;
   infoWindows: any;
 
-
-  constructor(public navCtrl: NavController, public geolocation: Geolocation, public http: Http) {
+  constructor(public navCtrl: NavController, public geolocation: Geolocation, public http: Http, public geocoder: NativeGeocoder) {
     this.infoWindows = [];
   }
 
@@ -61,21 +61,20 @@ export class HomePage {
 
 
   getMarkers() {
-    this.http.get('assets/data/markers.json').map((res) => res.json()).subscribe(data => {console.log(data)});
     this.http.get('assets/data/markers.json').map((res) => res.json()).subscribe(data => this.addMarkersToMap(data));
   };
 
 
   addMarkersToMap(markers) {
     for (let marker of markers) {
-      let position = new google.maps.LatLng(marker.latitude, marker.longitude);
-      let foodtruckMarker = new google.maps.Marker({position: position, title: marker.name, icon: {url: 'assets/imgs/Foodtruck.png', scaledSize: { width: 75, height: 75}}});
-      console.log(position.lat());
-      foodtruckMarker.setMap(this.map);
-
-      this.addInfoWindow(foodtruckMarker);
+      console.log(this.geocoder.forwardGeocode(marker.address))
+      this.geocoder.forwardGeocode(marker.address).then((coordinates: NativeGeocoderForwardResult) => console.log('The coordinates are latitude=' + coordinates.latitude + ' and longitude=' + coordinates.longitude))
+        .catch((error: any) => console.log(error));
     }
   }
+
+
+
 
   addInfoWindow(marker) {
     let button = '<button type="button" id="click" ion-button>Åben Profilside</button>';

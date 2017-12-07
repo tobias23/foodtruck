@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {Geolocation} from "@ionic-native/geolocation";
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
+import {ProfilePage} from "../profile/profile";
 
 declare var google;
 
@@ -75,7 +76,7 @@ export class HomePage {
     }
   }
 
-  addInfoWindow(marker, content){
+  addInfoWindow(marker, content) {
 
     let infoWindow = new google.maps.InfoWindow({
       content: content
@@ -85,6 +86,10 @@ export class HomePage {
       infoWindow.open(this.map, marker);
     });
 
+  }
+
+  openProfile(){
+    this.navCtrl.push(ProfilePage)
   }
 
 }

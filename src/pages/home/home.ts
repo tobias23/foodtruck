@@ -17,8 +17,11 @@ export class HomePage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  infoWindows: any;
+
 
   constructor(public navCtrl: NavController, public geolocation: Geolocation, public http: Http) {
+    this.infoWindows = [];
   }
 
   ionViewWillEnter() {
@@ -45,9 +48,8 @@ export class HomePage {
         animation: google.maps.Animation.DROP,
         position: latLng
       });
-      let content = "<h4>Her er jeg.</h4>";
 
-      this.addInfoWindow(marker, content);
+      this.addInfoWindow(marker);
 
       this.getMarkers();
 
@@ -65,31 +67,43 @@ export class HomePage {
 
 
   addMarkersToMap(markers) {
-    console.log("abe");
     for (let marker of markers) {
       let position = new google.maps.LatLng(marker.latitude, marker.longitude);
       let foodtruckMarker = new google.maps.Marker({position: position, title: marker.name, icon: {url: 'assets/imgs/Foodtruck.png', scaledSize: { width: 75, height: 75}}});
       console.log(position.lat());
       foodtruckMarker.setMap(this.map);
-      let content = marker.stuff;
-      this.addInfoWindow(foodtruckMarker, content);
+
+      this.addInfoWindow(foodtruckMarker);
     }
   }
 
-  addInfoWindow(marker, content) {
-
+  addInfoWindow(marker) {
+    let button = '<button type="button" id="click" ion-button>Åben Profilside</button>';
+    let infoWindowContent = '<div id="content"><h1 id="firstHeading" class="firstHeading">' + marker.title + '</h1>'+ button +'</div>';
     let infoWindow = new google.maps.InfoWindow({
-      content: content
+      content: infoWindowContent
     });
-
-    google.maps.event.addListener(marker, 'click', () => {
+    google.maps.event.addListenerOnce(infoWindow, 'domready', ()=> {
+      document.getElementById('click').addEventListener('click', () =>{
+        this.openProfile(marker.title);
+      })
+    });
+    marker.addListener('click', () => {
+      this.closeAllInfoWindows();
       infoWindow.open(this.map, marker);
     });
 
+    this.infoWindows.push(infoWindow);
   }
 
-  openProfile(){
-    this.navCtrl.push(ProfilePage)
+  closeAllInfoWindows() {
+    for(let window of this.infoWindows) {
+      window.close();
+    }
+  }
+
+  openProfile(title){
+    this.navCtrl.push(ProfilePage);
   }
 
 }

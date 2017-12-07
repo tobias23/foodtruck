@@ -1,27 +1,63 @@
  [
-    {
-      "latitude": 56.150620,
-      "longitude": 10.203686,
-      "name": "Pølsetoget",
-      "stuff": "Pølsetoget har haft hovedkontor ved banegården siden 200 BC og har med sine sublime pølser altid haft et varmt sted i de danske hjerter."
-    },
-    {
-      "latitude": 56.153237,
-      "longitude": 10.206701,
-      "name": "Dragons Kager",
-      "stuff": "Dragons Kager ligger lige ved den famøse butik Dragons Lair, som har sslgt nørd memorabilia i mange mange år."
-    },
-    {
-      "latitude": 56.156177,
-      "longitude": 10.200318,
-      "name": "Møllebakken Chilihaus",
-      "stuff": "Mmmmmhh.. Kan du mærke det brænder i næsen. Ja det er ikke Chili Klaus, men rettere Chilihaus som ligger lige ved Møllebakken."
-    },
-    {
-      "latitude": 56.172023,
-      "longitude": 10.205044,
-      "name": "Pizza On Wheelz",
-      "stuff": "Vrum Vrum! Pas på dernede, der kommer pizza. Pizza On Wheelz er kendte for deres specielle fremgangsmåde med at vognen altid bevæger sig. Vil man spise ved vognen skal man derfor have løbeskoene på"
-    }
+   {
+     "name":"Ristet Rug",
+     "address":"Prinsesse Charlottes Gade 14",
+     "postalCode":"2200",
+     "category":"Andet",
+     "contactPerson":"Anne Lindhardt",
+     "Email":"info@nordicfastfood.dk",
+     "telephone":"22958845",
+     "websiteLink":"http://www.nordicfastfood.dk",
+     "facebookLink":"https://www.facebook.com/nordicfastfood/",
+     "FAQ":"Teamet bag Nordic Fast Food og Ristet Rug Brød har en passion for sund og velsmagende mad. Med erfaring fra Asien, hvor begge har boet og arbejdet, er de inspireret af regionens folkelige og effektive gadekøkkener, der lynhurtigt fremstiller sunde og lækre måltider. Den slags er meget savnet i Danmark, men vi har jo faktisk allerede verdens bedste fastfood: Rugbrødet! På den måde opstod ideen med at kombinere den hurtige servering på gadehjørnet med den danske rugbrødsmad - på en ny måde, som både smager fantastisk og giver god næring. NORDIC FAST FOODs mobile køkken er godkendt af sundhedsmydighederne, og når du bestiller en mad, ristes det grove rugbrød på stedet og de friske lækkerier tilføjes. Her får man det bedste fra begge verdener: Sund og velsmagende fastfood. En genopfindelse af dansk smørrebrøds tradition! Al pålægget er hjemmelavet fra bunden, og opskrifterne er traditionel dansk smørrebrødspålæg med økologiske ingredienser. Du kan få Ristet Rug Brød med hjemmelavet: Frikadelle, fiskefrikadelle, leverpostej, kartoffel, æg, figen, ost og pulled pork. Desuden serveres en vidunderlig lækker og “sund” kage: Rug- rødbedemuffin!"
+   },
+   {
+     "name":"Jonathans Madcykel",
+     "address":"Dannebrosgade 4",
+     "postalCode":"1660",
+     "category":"Andet",
+     "contactPerson":"Jonathan Bashari",
+     "Email":"info@jonathansmadcykel.dk",
+     "telephone":"26845194",
+     "websiteLink":"https://www.jonathansmadcykel.dk",
+     "facebookLink":"https://www.facebook.com/jonathansmadcykel/",
+     "FAQ":"Konceptet er skabt med inspiration fra Latinamerikas kreative madkultur som er enkel, rustik og farvestrålende. Der videreudvikles på de traditionelle sydamerikanske opskrifter, hvor friske lokale råvarer er i fokus. Her tilbydes en autentisk menu bestående af tacos, quasedillas og fritterede yucarødder."
+   },
+   {
+     "name":"Hooked",
+     "address":"Nørrebrogade 59",
+     "postalCode":"2200",
+     "category":"Andet",
+     "contactPerson":"Hooked",
+     "Email":"info@gethooked.dk",
+     "telephone":"25129788",
+     "websiteLink":"http://gethooked.dk/food-truck/",
+     "facebookLink":"https://www.facebook.com/hookedkbh/",
+     "FAQ":"Hooked er Københavns fiskerestaurant og fiske-foodtruck."
+   },
+   {
+     "name":"Teriyaki Sushi",
+     "address":"Skanderborgvej 222",
+     "postalCode":"8260",
+     "category":"Sushi",
+     "contactPerson":"Mo",
+     "Email":"info@teriyakisushi.dk",
+     "telephone":"71200210",
+     "websiteLink":"http://www.teriyakisushi.dk",
+     "facebookLink":"https://www.facebook.com/TeriyakisushiViby/",
+     "FAQ":"Sushi takeaway. Altid friske råvarer. Med en kok der går meget op i kvaliteten. Så kig forbi for en god madoplevelse."
+   },
+   {
+     "name":"FOODsteps",
+     "address":"Rådhusgade 16",
+     "postalCode":"8300",
+     "category":"Amerikansk",
+     "contactPerson":"Line Faber Jürgensen",
+     "Email":"info@foodsteps.dk",
+     "telephone":"26351010",
+     "websiteLink":"http://www.foodsteps.dk",
+     "facebookLink":"https://www.facebook.com/foodsteps.dk/",
+     "FAQ":"FOODsteps! Bedre mad - Bedre fest. Lækker mad - hvor som helst - når som helst. Fra street food og vaffel, til gourmet med kniv og gaffel"
+   }
   ]
 

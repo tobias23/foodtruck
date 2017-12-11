@@ -15,11 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
+  parameterName: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.parameterName = navParams.get('paramName');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+   console.log(this.navParams.get('paramName'));
   }
 
 }

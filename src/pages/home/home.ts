@@ -1,10 +1,10 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {ModalController, NavController} from 'ionic-angular';
 import {Geolocation} from "@ionic-native/geolocation";
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
 import {ProfilePage} from "../profile/profile";
-import {NativeGeocoder, NativeGeocoderForwardResult} from "@ionic-native/native-geocoder";
+
 
 declare var google;
 
@@ -20,7 +20,7 @@ export class HomePage {
   map: any;
   infoWindows: any;
 
-  constructor(public navCtrl: NavController, public geolocation: Geolocation, public http: Http, public geocoder: NativeGeocoder) {
+  constructor(public navCtrl: NavController, public geolocation: Geolocation, public http: Http, private modalCtrl: ModalController) {
     this.infoWindows = [];
   }
 
@@ -37,7 +37,7 @@ export class HomePage {
 
       let mapOptions = {
         center: latLng,
-        zoom: 15,
+        zoom: 10,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
 
       };
@@ -49,8 +49,6 @@ export class HomePage {
         position: latLng
       });
 
-      this.addInfoWindow(marker);
-
       this.getMarkers();
 
     }, (err) => {
@@ -61,30 +59,48 @@ export class HomePage {
 
 
   getMarkers() {
-    this.http.get('assets/data/markers.json').map((res) => res.json()).subscribe(data => this.addMarkersToMap(data));
+    this.http.get('assets/data/markers.json').map((res) => res.json()).subscribe(data => this.getLatLong(data));
   };
 
-
-  addMarkersToMap(markers) {
+  getLatLong(markers) {
     for (let marker of markers) {
-      console.log(this.geocoder.forwardGeocode(marker.address))
-      this.geocoder.forwardGeocode(marker.address).then((coordinates: NativeGeocoderForwardResult) => console.log('The coordinates are latitude=' + coordinates.latitude + ' and longitude=' + coordinates.longitude))
-        .catch((error: any) => console.log(error));
+      this.http.get('http://maps.google.com/maps/api/geocode/json?address=' + marker.address + ', ' + marker.postalCode).map((res) => res.json()).subscribe(data => this.addMarkersToMap(data, marker));
     }
   }
 
+  addMarkersToMap(marker, markerData) {
+    let icon = {
+      url: 'assets/imgs/Foodtruck.png',
+      scaledSize: new google.maps.Size(50, 50),
+    };
+    marker = new google.maps.Marker({
+      map: this.map,
+      animation:google.maps.Animation.DROP,
+      position: marker.results[0].geometry.location,
+      icon: icon
+
+    });
+      this.addInfoWindow(marker, markerData);
+    }
 
 
 
-  addInfoWindow(marker) {
-    let button = '<button type="button" id="click" ion-button>Åben Profilside</button>';
-    let infoWindowContent = '<div id="content"><h1 id="firstHeading" class="firstHeading">' + marker.title + '</h1>'+ button +'</div>';
+
+
+  addInfoWindow(marker, markerData) {
+    console.log(markerData);
+    var content = document.createElement('div');
+    content.innerHTML = markerData.name;
+    var button = content.appendChild(document.createElement("input"));
+    button.type = 'button';
+    button.id = "click";
+    button.value = "Åben Profilside";
     let infoWindow = new google.maps.InfoWindow({
-      content: infoWindowContent
+      content: content
     });
     google.maps.event.addListenerOnce(infoWindow, 'domready', ()=> {
       document.getElementById('click').addEventListener('click', () =>{
-        this.openProfile(marker.title);
+        this.openProfile(markerData);
       })
     });
     marker.addListener('click', () => {
@@ -101,8 +117,8 @@ export class HomePage {
     }
   }
 
-  openProfile(title){
-    this.navCtrl.push(ProfilePage);
+  openProfile(markerData){
+    this.navCtrl.push(ProfilePage, { paramName: markerData.name})
   }
 
 }

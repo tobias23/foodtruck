@@ -9,6 +9,9 @@ import { HttpModule } from "@angular/http";
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {ProfilePage} from "../pages/profile/profile";
+import {MenuPage} from "../pages/menu/menu";
+import {InfoPage} from "../pages/info/info";
+import {AnmeldelserPage} from "../pages/anmeldelser/anmeldelser";
 
 
 
@@ -16,7 +19,10 @@ import {ProfilePage} from "../pages/profile/profile";
   declarations: [
     MyApp,
     HomePage,
-    ProfilePage
+    ProfilePage,
+    MenuPage,
+    InfoPage,
+    AnmeldelserPage
 
   ],
   imports: [
@@ -28,7 +34,10 @@ import {ProfilePage} from "../pages/profile/profile";
   entryComponents: [
     MyApp,
     HomePage,
-    ProfilePage
+    ProfilePage,
+    MenuPage,
+    InfoPage,
+    AnmeldelserPage
   ],
   providers: [
     StatusBar,

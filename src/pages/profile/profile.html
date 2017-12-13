@@ -48,5 +48,9 @@
 
 
 <ion-content padding>
-  <p>{{ parameterName }}</p>
+  <ion-tabs>
+    <ion-tab [root]="menuPage" [rootParams]="parameterData" tabIcon="star" tabTitle="Menu"></ion-tab>
+    <ion-tab [root]="infoPage" [rootParams]="parameterData" tabIcon="book" tabTitle="Info"></ion-tab>
+    <ion-tab [root]="anmeldelserPage" [rootParams]="parameterData" tabIcon="menu" tabTitle="Anmeldelser"></ion-tab>
+  </ion-tabs>
 </ion-content>

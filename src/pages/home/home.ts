@@ -88,7 +88,6 @@ export class HomePage {
 
 
   addInfoWindow(marker, markerData) {
-    console.log(markerData);
     var content = document.createElement('div');
     content.innerHTML = markerData.name;
     var button = content.appendChild(document.createElement("input"));
@@ -118,7 +117,7 @@ export class HomePage {
   }
 
   openProfile(markerData){
-    this.navCtrl.push(ProfilePage, { paramName: markerData.name})
+    this.navCtrl.push(ProfilePage, { paramData: markerData})
   }
 
 }

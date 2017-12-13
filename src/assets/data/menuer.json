@@ -1,0 +1,60 @@
+[
+  {
+    "menuKey" : 1,
+    "menu" : [
+      {
+        "vare": {
+          "vareNavn": "TERIYAKILAKSEN",
+          "pris": 65.00,
+          "img": "assets/imgs/Teriyaki/TeriyakiSushi-burittoLaks.png"
+        }
+      },
+      {
+        "vare" : {
+          "vareNavn" : "Wasabi",
+          "pris" : 5.00,
+          "img" : "assets/imgs/Teriyaki/Wasabi.png"
+        }
+      },
+      {
+        "vare" : {
+          "vareNavn" : "Beef Roll futo maki",
+          "pris" : 69.00,
+          "img" : "assets/imgs/Teriyaki/Beefroll_futomaki.png"
+        }
+      }
+    ]
+  },
+  {
+    "menuKey" : 2,
+      "menu" : [
+        {
+          "vare" : {
+            "vareNavn" : "Fish & Chips",
+            "pris" : 85,
+            "img" : "assets/imgs/Hooked/Fish&Chips.jpg"
+          }
+        },
+        {
+          "vare" : {
+            "vareNavn" : "Salmon Burger",
+            "pris" : 85,
+            "img" : "assets/imgs/Hooked/SalmonBurger.jpg"
+        }
+
+
+        },
+        {
+          "vare" : {
+            "vareNavn" : "Prawn Tempura Wrap",
+            "pris" : 85,
+            "img" : "assets/imgs/Hooked/prawnWrap.jpg"
+          }
+        }
+      ]
+
+
+
+}
+
+]

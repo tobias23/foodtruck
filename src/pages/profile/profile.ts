@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {MenuPage} from "../menu/menu";
+import {InfoPage} from "../info/info";
+import {AnmeldelserPage} from "../anmeldelser/anmeldelser";
 
 /**
  * Generated class for the ProfilePage page.
@@ -15,14 +18,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  parameterName: string;
+
+  menuPage = MenuPage;
+  infoPage = InfoPage;
+  anmeldelserPage = AnmeldelserPage;
+  parameterData : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.parameterName = navParams.get('paramName');
+    this.parameterData = navParams.get("paramData");
+
   }
 
   ionViewDidLoad() {
-   console.log(this.navParams.get('paramName'));
+
   }
 
 }

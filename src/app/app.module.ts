@@ -12,6 +12,8 @@ import {ProfilePage} from "../pages/profile/profile";
 import {MenuPage} from "../pages/menu/menu";
 import {InfoPage} from "../pages/info/info";
 import {AnmeldelserPage} from "../pages/anmeldelser/anmeldelser";
+import {TruckService} from "../service/truckService";
+
 
 
 
@@ -44,6 +46,7 @@ import {AnmeldelserPage} from "../pages/anmeldelser/anmeldelser";
     SplashScreen,
     Geolocation,
     HttpModule,
+    TruckService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -7,14 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{name}} - Menu</ion-title>
+    <ion-title>{{data.name}} - Menu</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+<img src="{{data.banner}}">
   <ion-list>
     <ion-item *ngFor="let menu of menuer">
       <ion-avatar item-start>
@@ -25,10 +25,5 @@
     </ion-item>
 
   </ion-list>
-
-
-
-
-
 
 </ion-content>

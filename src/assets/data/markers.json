@@ -5,7 +5,7 @@
      "postalCode":"2200",
      "category":"Andet",
      "contactPerson":"Anne Lindhardt",
-     "Email":"info@nordicfastfood.dk",
+     "email":"info@nordicfastfood.dk",
      "telephone":"22958845",
      "websiteLink":"http://www.nordicfastfood.dk",
      "facebookLink":"https://www.facebook.com/nordicfastfood/",
@@ -17,7 +17,7 @@
      "postalCode":"1660",
      "category":"Andet",
      "contactPerson":"Jonathan Bashari",
-     "Email":"info@jonathansmadcykel.dk",
+     "email":"info@jonathansmadcykel.dk",
      "telephone":"26845194",
      "websiteLink":"https://www.jonathansmadcykel.dk",
      "facebookLink":"https://www.facebook.com/jonathansmadcykel/",
@@ -29,7 +29,7 @@
      "postalCode":"2200",
      "category":"Andet",
      "contactPerson":"Hooked",
-     "Email":"info@gethooked.dk",
+     "email":"info@gethooked.dk",
      "telephone":"25129788",
      "websiteLink":"http://gethooked.dk/food-truck/",
      "facebookLink":"https://www.facebook.com/hookedkbh/",
@@ -42,10 +42,25 @@
      "postalCode":"8260",
      "category":"Sushi",
      "contactPerson":"Mo",
-     "Email":"info@teriyakisushi.dk",
+     "email":"info@teriyakisushi.dk",
      "telephone":"71200210",
      "websiteLink":"http://www.teriyakisushi.dk",
      "facebookLink":"https://www.facebook.com/TeriyakisushiViby/",
+     "banner" : "assets/imgs/Banner/BannerTeriyaki.PNG",
+     "aabningsTider" : "Mandag - søndag 14-21. Fredage fra kl.12. Lukket 24/12.",
+     "infoBilleder" : [
+       {
+         "infoBilled" : "assets/imgs/Teriyaki/infoBilled1.png"
+       },
+       {
+         "infoBilled" : "assets/imgs/Teriyaki/infobilled2.png"
+       },
+       {
+         "infoBilled" : "assets/imgs/Teriyaki/infoBilled3.png"
+       }
+
+
+     ],
      "FAQ":"Sushi takeaway. Altid friske råvarer. Med en kok der går meget op i kvaliteten. Så kig forbi for en god madoplevelse.",
      "menuKey" : 1
    },
@@ -55,7 +70,7 @@
      "postalCode":"8300",
      "category":"Amerikansk",
      "contactPerson":"Line Faber Jürgensen",
-     "Email":"info@foodsteps.dk",
+     "email":"info@foodsteps.dk",
      "telephone":"26351010",
      "websiteLink":"http://www.foodsteps.dk",
      "facebookLink":"https://www.facebook.com/foodsteps.dk/",

@@ -14,5 +14,15 @@
 
 
 <ion-content padding>
+  <img src="{{data.banner}}">
+  <p>{{data.FAQ}}</p>
+  <p>{{data.aabningsTider}}</p>
+  <p>Email: {{data.email}}</p>
+  <p>TelefonNr: +45{{data.telephone}}</p>
 
+  <ion-list>
+    <ion-item *ngFor="let billed of data.infoBilleder">
+      <img src="{{billed.infoBilled}}">
+    </ion-item>
+  </ion-list>
 </ion-content>

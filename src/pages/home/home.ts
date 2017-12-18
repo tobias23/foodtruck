@@ -16,6 +16,7 @@ declare var google;
 export class HomePage {
  startDes: any;
  endDes: any;
+ tempNr = 0;
 
 
   @ViewChild('map') mapElement: ElementRef;
@@ -32,7 +33,11 @@ export class HomePage {
   }
 
   loadMap(){
-
+    if(this.tempNr == 0){
+      this.openProfile("abe");
+      this.navCtrl.pop();
+      this.tempNr = 1;
+    }
     this.geolocation.getCurrentPosition().then((position) => {
 
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);

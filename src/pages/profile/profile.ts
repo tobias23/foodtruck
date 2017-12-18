@@ -19,17 +19,21 @@ import { TruckService } from "../../service/truckService";
 })
 export class ProfilePage {
 
-  menuPage = MenuPage;
-  infoPage = InfoPage;
-  anmeldelserPage = AnmeldelserPage;
+  menuPage : any = MenuPage;
+  infoPage  : any= InfoPage;
+  anmeldelserPage : any = AnmeldelserPage;
   parameterData : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private truckService: TruckService) {
     this.parameterData = navParams.get("paramData");
 
+
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+
+  }
+  openWebsite(){
 
   }
 

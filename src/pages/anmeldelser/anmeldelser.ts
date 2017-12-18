@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the AnmeldelserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -15,10 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AnmeldelserPage {
 
+  data : any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.data = navParams.data;
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('ionViewDidLoad AnmeldelserPage');
   }
 

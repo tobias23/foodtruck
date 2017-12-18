@@ -14,11 +14,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'info.html',
 })
 export class InfoPage {
+  data : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.data = navParams.data;
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     console.log('ionViewDidLoad InfoPage');
   }
 

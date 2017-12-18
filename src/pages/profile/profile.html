@@ -7,39 +7,51 @@
 <ion-header>
 
   <ion-navbar >
-    <ion-buttons >
-    <button ion-button>
-      <div>
-      <ion-icon name="calendar"></ion-icon>
-        <label class="subTitle">Booking</label>
-      </div>
-    </button>
-
-      <button ion-button>
-        <div>
-        <ion-icon name="logo-facebook"></ion-icon>
-        <label class="subTitle">Facebook</label>
-        </div>
-      </button>
-
+    <div class = "row">
+      <div class = "col">
         <button ion-button>
           <div>
-            <ion-icon name="globe"></ion-icon>
-            <label class="subTitle">Hjemmeside</label>
+            <ion-icon name="calendar"></ion-icon>
+            <label class="subTitle">Booking</label>
           </div>
         </button>
-
+      </div>
+      <div class = "col">
+        <a href="{{parameterData.facebookLink}}">
+          <button ion-button>
+            <div>
+              <ion-icon name="logo-facebook"></ion-icon>
+              <label class="subTitle">Facebook</label>
+            </div>
+          </button>
+        </a>
+      </div>
+      <div class = "col">
+        <a href="{{parameterData.websiteLink}}">
+          <button ion-button>
+            <div>
+              <ion-icon name="globe"></ion-icon>
+              <label class="subTitle">Hjemmeside</label>
+            </div>
+          </button>
+        </a>
+      </div>
+      <div class = "col">
         <button ion-button (click)="routeClicked()">
           <div>
             <ion-icon name="walk"></ion-icon>
             <label class="subTitle">Rute vejledning</label>
           </div>
+        </button>
+      </div>
+    </div>
 
 
 
 
-      </button>
-    </ion-buttons>
+
+
+
 
 
   </ion-navbar>
@@ -49,8 +61,9 @@
 
 <ion-content padding>
   <ion-tabs>
-    <ion-tab [root]="menuPage" [rootParams]="parameterData" tabIcon="star" tabTitle="Menu"></ion-tab>
+
     <ion-tab [root]="infoPage" [rootParams]="parameterData" tabIcon="book" tabTitle="Info"></ion-tab>
+    <ion-tab [root]="menuPage" [rootParams]="parameterData" tabIcon="star" tabTitle="Menu"></ion-tab>
     <ion-tab [root]="anmeldelserPage" [rootParams]="parameterData" tabIcon="menu" tabTitle="Anmeldelser"></ion-tab>
   </ion-tabs>
 </ion-content>

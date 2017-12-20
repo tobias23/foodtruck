@@ -15,8 +15,8 @@ declare var google;
 })
 export class HomePage {
  startDes: any;
- endDes: any;
  tempNr = 0;
+ selectedVal = "Alle";
 
 
   @ViewChild('map') mapElement: ElementRef;
@@ -25,12 +25,20 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public geolocation: Geolocation, public http: Http, private modalCtrl: ModalController, private truckService: TruckService) {
     this.infoWindows = [];
+
+
   }
 
   ionViewWillEnter() {
-    this.loadMap()
+    this.loadMap();
 
   }
+
+  categoryFilter(kategori){
+    this.selectedVal = kategori;
+    this.loadMap();
+  }
+
 
   loadMap(){
     if(this.tempNr == 0){
@@ -68,12 +76,23 @@ export class HomePage {
 
   getMarkers() {
     this.http.get('assets/data/markers.json').map((res) => res.json()).subscribe(data => this.getLatLong(data));
+
   };
 
   getLatLong(markers) {
+    if(this.selectedVal != "Alle"){
+      let temp = [];
+      for(let marker of markers){
+        if(marker.category == this.selectedVal){
+          temp.push(marker);
+
+        }
+      }
+      markers = temp;
+    }
     for (let marker of markers) {
 
-     this.http.get('http://maps.google.com/maps/api/geocode/json?address=' + marker.address + ', ' + marker.postalCode).map((res) => res.json()).subscribe(data => this.addMarkersToMap(data, marker));
+      this.http.get('http://maps.google.com/maps/api/geocode/json?address=' + marker.address + ', ' + marker.postalCode).map((res) => res.json()).subscribe(data => this.addMarkersToMap(data, marker));
     }
   }
 

@@ -13,5 +13,35 @@
 </ion-header>
 
 <ion-content>
+  <ion-item >
+    <ion-label>Kategori</ion-label>
+    <ion-select [(ngModel)]="kategori" (ionChange)="categoryFilter(kategori);">
+      <ion-option value="Alle">Alle</ion-option>
+      <ion-option value="Amerikansk">Amerikansk</ion-option>
+      <ion-option value="Argentinsk">Argentinsk</ion-option>
+      <ion-option value="Bar/drikkevarer">Bar/drikkevarer</ion-option>
+      <ion-option value="Burger">Burger</ion-option>
+      <ion-option value="Butik">Butik</ion-option>
+      <ion-option value="Dansk">Dansk</ion-option>
+      <ion-option value="Engelsk">Engelsk</ion-option>
+      <ion-option value="Fransk">Fransk</ion-option>
+      <ion-option value="Indisk">Indisk</ion-option>
+      <ion-option value="Italiensk">Italiensk</ion-option>
+      <ion-option value="Kaffe">Kaffe</ion-option>
+      <ion-option value="Mexikansk">Mexikansk</ion-option>
+      <ion-option value="Pandekager">Pandekager</ion-option>
+      <ion-option value="Pølsevogn">Pølsevogn</ion-option>
+      <ion-option value="Spansk">Spansk</ion-option>
+      <ion-option value="Sushi">Sushi</ion-option>
+      <ion-option value="Thailandsk">Thailandsk</ion-option>
+      <ion-option value="Vietnamesisk">Vietnamesisk</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
   <div #map id="map"></div>
 </ion-content>

@@ -76,6 +76,67 @@
      "websiteLink":"http://www.foodsteps.dk",
      "facebookLink":"https://www.facebook.com/foodsteps.dk/",
      "FAQ":"FOODsteps! Bedre mad - Bedre fest. Lækker mad - hvor som helst - når som helst. Fra street food og vaffel, til gourmet med kniv og gaffel"
+   },
+   {
+     "name": "Leans Weeb Bod",
+     "address": "Fjældevænget 2",
+     "postalCode": "8210",
+     "category": "Sushi",
+     "contactPerson": "Lean Randlev",
+     "email": "foodtrucks@foodtrucks.dk",
+     "telephone": "12345678",
+     "websiteLink": "foodtruck.dk",
+     "facebookLink": "http://www.facebook.com/foodtruck/",
+     "FAQ": "Har du også glemt hvordan man er social? Bare rolig. Lean er stille som en mus. Husk dit weeb legetøj som du får med din hjemmelavede danske sushi."
+   },
+   {
+     "name": "2 Stjerne Til Højre",
+     "address": "Møllevejen 23",
+     "postalCode": "8000",
+     "category": "Burger",
+     "contactPerson": "Peter Pan",
+     "email": "udkant@mælkevej.space",
+     "telephone": "76485176",
+     "websiteLink": "http://www.Ønskeøen.dk",
+     "facebookLink": "https://www.facebook.com/Ønskeøen/",
+     "banner" : "assets/imgs/Møllevejen/Pan.jpg",
+     "FAQ": "2 stjerne til højre, lige i udkanten af møllevejen. Her serveres friske burgere lavet af krokodillekød, kokkereret af pirater og serveret af glemte drenge"
+   },
+   {
+     "name": "Don Americano",
+     "address": "Hans Egedes Vej 21",
+     "postalCode": "8200",
+     "category": "Butik",
+     "contactPerson": "Peter Schmeicel",
+     "email": "info@Riisvang.dk",
+     "telephone": "49761649",
+     "websiteLink": "http://www.donamericano.dk",
+     "facebookLink": "https://www.facebook.com/Don-Americano/",
+     "FAQ": "Mangler du en snack når du ser sport, kom hen til Don Americano hvor du kan spille om priserne."
+   },
+   {
+     "name": "Den Brune Barista",
+     "address": "Anholtsgade 13",
+     "postalCode": "8000",
+     "category": "Kaffe",
+     "contactPerson": "Malik Braun",
+     "email": "info@brunebarista.dk",
+     "telephone": "49761345",
+     "websiteLink": "http://www.denbrunebarista.dk",
+     "facebookLink": "https://www.facebook.com/brunebarista/",
+     "FAQ": "Sukker? Mælk? Fløde? Næ nej du! Hos os er kaffen mere sort end hulrummet der findes i dit hjerte."
+   },
+   {
+     "name": "Flødekongen",
+     "address": "Anholtsgade 2",
+     "postalCode": "8000",
+     "category": "Kaffe",
+     "contactPerson": "Monsiour Creme",
+     "email": "info@flødekongen.dk",
+     "telephone": "79461548",
+     "websiteLink": "http://www.Flødekongen.dk",
+     "facebookLink": "https://www.facebook.com/Flødekongen/",
+     "FAQ": "Vil du gerne have en kop kaffe, men orker ikke smagen. Bare rolig. Hos os får du en kop fløde med et skvis kaffe oveni. Sparker virkelig dagen igang"
    }
-  ]
+     ]
 

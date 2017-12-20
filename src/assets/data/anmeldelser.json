@@ -1,0 +1,64 @@
+[
+  {
+    "foodtruckKey" : 1,
+    "anmeldelser" : [
+      {
+        "anmeldelse" : {
+          "overskrift" : "Fremragende Sushi! Fantastisk service.",
+          "indhold" : "Altid, rar, hurtig og venlig betjening! Kan klart anbefale dette sted.",
+          "forfatter" : "Jakob Linde / Aarhus",
+          "stjerner" : "5"
+        }
+      },
+      {
+        "anmeldelse": {
+          "overskrift": "Dejlig service og lækker burrito",
+          "indhold": "Lækker sushi, men jeg var skeptisk med deres sushi burrito. Må indrømme jeg blev positiv overrasket. Lækkert!",
+          "forfatter": "Nima / Aarhus",
+          "stjerner": "5"
+        }
+      },
+      {
+        "anmeldelse" : {
+          "overskrift": "God sushi til nogenlunde pris",
+          "indhold" : "Rigtig god sushi men priserne var en smule høje iforhold hvor meget man fik",
+          "forfatter" : "Flemming / Aarhus",
+          "stjerner" : "3"
+        }
+      }
+
+
+    ]
+  },
+  {
+    "foodtruckKey" : 2,
+    "anmeldelser" :[
+      {
+        "anmeldelse" : {
+          "overskrift" : "Thank you for a great experience!",
+          "indhold" : "It is fair to say that, I haven't tried better seafood anywhere else in Denmark for those prices. The menu is quite unique with great taste and authenticity.",
+          "forfatter" : "Millad Ghobishi / KBH",
+          "stjerner" : "5"
+        }
+      },
+      {
+        "anmeldelse": {
+          "overskrift": "Such a shame",
+          "indhold": "Oh I was really excited for this place, but the food is dripping of fat and oil. It's just too much. We couldn't eat up.",
+          "forfatter": "Shami Mirza / KBH",
+          "stjerner": "2"
+        }
+      },
+      {
+        "anmeldelse": {
+          "overskrift": "alt i alt lækkert",
+          "indhold": "super sted\n lækkert fisk\n super søde personale\n priser der ok\n alt i alt lækkert",
+          "forfatter": "Per Michael Christensen / KBH",
+          "stjerner": "5"
+        }
+      }
+
+    ]
+  }
+
+]

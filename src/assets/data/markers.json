@@ -33,8 +33,9 @@
      "telephone":"25129788",
      "websiteLink":"http://gethooked.dk/food-truck/",
      "facebookLink":"https://www.facebook.com/hookedkbh/",
+     "banner" : "assets/imgs/Banner/BannerHooked.png",
      "FAQ":"Hooked er Københavns fiskerestaurant og fiske-foodtruck.",
-     "menuKey" : 2
+     "foodtruckKey": 2
    },
    {
      "name":"Teriyaki Sushi",
@@ -62,7 +63,7 @@
 
      ],
      "FAQ":"Sushi takeaway. Altid friske råvarer. Med en kok der går meget op i kvaliteten. Så kig forbi for en god madoplevelse.",
-     "menuKey" : 1
+     "foodtruckKey": 1
    },
    {
      "name":"FOODsteps",

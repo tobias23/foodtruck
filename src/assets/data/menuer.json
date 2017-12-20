@@ -1,6 +1,6 @@
 [
   {
-    "menuKey" : 1,
+    "foodtruckKey": 1,
     "menu" : [
       {
         "vare": {
@@ -26,7 +26,7 @@
     ]
   },
   {
-    "menuKey" : 2,
+    "foodtruckKey": 2,
       "menu" : [
         {
           "vare" : {
@@ -52,7 +52,6 @@
           }
         }
       ]
-
 
 
 }

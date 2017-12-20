@@ -98,13 +98,24 @@ export class HomePage {
 
   addInfoWindow(marker, markerData) {
     let content = document.createElement('div');
-    content.innerHTML = markerData.name;
+    let title = content.appendChild(document.createElement("strong"));
+    title.innerText = markerData.name;
+    if(markerData.hasOwnProperty("banner")){
+      let img = content.appendChild(document.createElement("img"));
+      img.src = markerData.banner;
+      img.className = "infoBanner";
+    }
+
+    let category = content.appendChild(document.createElement("p"));
+    category.innerText = "Kategori : " + markerData.category;
     let button = content.appendChild(document.createElement("input"));
-    button.type = 'button';
+    button.className = "infoButton";
+    button.type = 'button ion-button';
     button.id = "click";
     button.value = "Åben Profilside";
     let buttonRoute = content.appendChild(document.createElement("input"));
     buttonRoute.type = 'button';
+    buttonRoute.className = "infoButton";
     buttonRoute.id = "route";
     buttonRoute.value = "Rutevejledning";
     let infoWindow = new google.maps.InfoWindow({

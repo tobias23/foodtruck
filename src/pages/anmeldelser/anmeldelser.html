@@ -15,4 +15,16 @@
 
 <ion-content padding>
 <img src="{{data.banner}}">
+  <ion-list>
+    <ion-item *ngFor="let anmeldelse of anmeldelserArray">
+      <strong>{{anmeldelse.anmeldelse.overskrift}}</strong>
+      <p>{{anmeldelse.anmeldelse.indhold}}</p>
+      <button ion-button>Læs fulde anmeldelse</button>
+      <h4>{{anmeldelse.anmeldelse.forfatter}}</h4>
+      <img src="{{anmeldelse.anmeldelse.stjerner}}">
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button>Skriv anmeldelse</button>
 </ion-content>

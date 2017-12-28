@@ -7,6 +7,9 @@ import { Http } from "@angular/http";
   selector: 'page-anmeldelser',
   templateUrl: 'anmeldelser.html',
 })
+/**
+anmeldelserArray - Variable that we use to hold all reviews of a foodtruck
+ */
 export class AnmeldelserPage {
 
   anmeldelserArray : any;
@@ -14,16 +17,25 @@ export class AnmeldelserPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
     this.data = navParams.data;
   }
-
+  /**
+  ionViewWillEnter() - What happends when you enter the page
+   */
   ionViewWillEnter() {
     this.getAnmeldelser();
     console.log('ionViewDidLoad AnmeldelserPage');
   }
-
+  /**
+  getAnmeldelser() - makes a http call to hour json file and collects the data and pass it on to getAnmeldelse();
+   */
   getAnmeldelser(){
  this.http.get('assets/data/anmeldelser.json').map((res) => res.json()).subscribe(data => this.getAnmeldelse(data));
   }
 
+  /**
+  getAnmeldelse(anmeldelser) - this method goes through our reviews and adds the one that has the same foodtuckKey as the foodtruck we are on to our array.
+  Then it calls the method getStarPic();
+   @anmeldelser - array of json objects, containing reviews from all foodtrucks.
+   */
 
   getAnmeldelse(anmeldelser){
     for(let anmeldelse of anmeldelser){
@@ -33,6 +45,10 @@ export class AnmeldelserPage {
       }
     }
   }
+  /**
+  getStartPic(anmeldelser) takes our array of reviews and replaces the number of stars and changes it to a picture matching the number.
+   @anmeldelser - array of json objects, containing reviews from 1 foodtrucks.
+   */
 
   getStarPic(anmeldelser){
     for(let anmeldelse of anmeldelser){

@@ -14,8 +14,13 @@ declare var google;
   templateUrl: 'home.html'
 })
 export class HomePage {
+  /**
+  startDes variable we use to hold your current posistion
+  timesLoaded variable we use to see if it is the first time you load the program
+  selectedVal variable we set after what categori the map will sort after, default "Alle"
+   */
  startDes: any;
- tempNr = 0;
+ timesLoaded = 0;
  selectedVal = "Alle";
 
 
@@ -23,28 +28,38 @@ export class HomePage {
   map: any;
   infoWindows: any;
 
-  constructor(public navCtrl: NavController, public geolocation: Geolocation, public http: Http, private modalCtrl: ModalController, private truckService: TruckService) {
+  constructor(public navCtrl: NavController, public geolocation: Geolocation,
+              public http: Http, private modalCtrl: ModalController, private truckService: TruckService) {
     this.infoWindows = [];
 
 
   }
-
+  /**
+   ionViewWillEnter() - What happends when you enter this view
+   */
   ionViewWillEnter() {
     this.loadMap();
 
   }
-
+  /**
+    categoryFilter(kategori) - method that is run when the categori field changes, sets selectedVal to chosen categori
+   @kategori - value of chosen categori in interface
+ */
   categoryFilter(kategori){
     this.selectedVal = kategori;
     this.loadMap();
   }
 
-
+/**
+  loadMap() - this method creates our map with the googleMaps api. we check whether it is first time we use the app, if it is we open and close the profile page
+  to not get a bug with our tabs. We use mapOptions to set the settings of our map and use our latLng variable to get the current position and set the map after those coordinates.
+  Afterwards we create a marker at the position.
+ */
   loadMap(){
-    if(this.tempNr == 0){
-      this.openProfile("abe");
+    if(this.timesLoaded == 0){
+      this.openProfile("first load");
       this.navCtrl.pop();
-      this.tempNr = 1;
+      this.timesLoaded = 1;
     }
     this.geolocation.getCurrentPosition().then((position) => {
 
@@ -53,7 +68,7 @@ export class HomePage {
 
       let mapOptions = {
         center: latLng,
-        zoom: 10,
+        zoom: 13,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
 
       };
@@ -73,12 +88,19 @@ export class HomePage {
   };
 
 
-
+/**
+getMarkers() - This method uses a http call to collect our local data form a json file and sends the data to a the method getLatLong()
+ */
   getMarkers() {
     this.http.get('assets/data/markers.json').map((res) => res.json()).subscribe(data => this.getLatLong(data));
 
   };
 
+/**
+This method checks the selectedVal variable, if the selectedVal is at default it will just get all foodtrucks, if not it will get those with the right categori
+with a http call and send it to the method addMarkersToMap()
+ @markers - array of markers
+ */
   getLatLong(markers) {
     if(this.selectedVal != "Alle"){
       let temp = [];
@@ -92,10 +114,16 @@ export class HomePage {
     }
     for (let marker of markers) {
 
-      this.http.get('http://maps.google.com/maps/api/geocode/json?address=' + marker.address + ', ' + marker.postalCode).map((res) => res.json()).subscribe(data => this.addMarkersToMap(data, marker));
+      this.http.get('http://maps.google.com/maps/api/geocode/json?address=' + marker.address + ', ' + marker.postalCode).
+      map((res) => res.json()).subscribe(data => this.addMarkersToMap(data, marker));
     }
   }
 
+/**
+addMarkersToMap(marker, markerData) - This method creates our markers and adds them to the map and calls the method addInfoWindow().
+ @marker - array holding 1 latitude and longitude of a adress
+ @markerData - json object containing a foodtrucks varaibles
+ */
   addMarkersToMap(marker, markerData) {
     let icon = {
       url: 'assets/imgs/Foodtruck.png',
@@ -113,7 +141,12 @@ export class HomePage {
 
 
 
-
+/**
+  addInfoWindow(marker, markerData) - This method creates a information window for each of our markers and puts the data into them.
+  At the end it adds them to our infoWindows array.
+ @markers - array holding 1 latitude and longitude of a adress
+ @markerData - json object containing a foodtrucks varaibles
+ */
 
   addInfoWindow(marker, markerData) {
     let content = document.createElement('div');
@@ -124,7 +157,6 @@ export class HomePage {
       img.src = markerData.banner;
       img.className = "infoBanner";
     }
-
     let category = content.appendChild(document.createElement("p"));
     category.innerText = "Kategori : " + markerData.category;
     let button = content.appendChild(document.createElement("input"));
@@ -155,12 +187,19 @@ export class HomePage {
 
     this.infoWindows.push(infoWindow);
   }
-
+/**
+closeAllInfoWindows() - this method makes sure that only 1 window can be open at any time.
+ */
   closeAllInfoWindows() {
     for(let window of this.infoWindows) {
       window.close();
     }
   }
+
+  /**
+  openProfile(markerData) - this method opens the foodtruck profile and sends all the information associated with it to the profilePage view.
+   @markerData - json object containing a foodtrucks varaibles
+   */
 
   openProfile(markerData){
     this.navCtrl.push(ProfilePage, { paramData: markerData, paramStart: this.startDes})

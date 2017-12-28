@@ -9,7 +9,11 @@ export class TruckService{
   constructor() {
 
   }
-
+  /**
+  calculateAndDisplayRoute(marker, startDestination) - This method gets the directions between 2 different points on the map
+   @marker - location of a foodtruck
+   @startDes - your current position
+   */
   calculateAndDisplayRoute(marker, startDestination) {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
